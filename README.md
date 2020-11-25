@@ -22,7 +22,9 @@ v-on:keyup.enter='say'
 8、属性绑定：   
 v-bind指令用法<a v-bind:href='url'></a>缩写<a :href='url'></a>   
 可用于双向绑定<input v-bind:value='msg' v-on:input='msg=$event.target.value'>   
-
+9、样式绑定：   
+对象语法：<div v-bind:class="{active:isActive}"></div>   
+数组语法：<div v-bind:class="[activeClass,errorClass]"></div>需要在data中声明activeClass:'active'   
 
 
 
