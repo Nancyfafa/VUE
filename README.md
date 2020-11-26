@@ -23,9 +23,23 @@ v-on:keyup.enter='say'
 v-bind指令用法<a v-bind:href='url'></a>缩写<a :href='url'></a>   
 可用于双向绑定<input v-bind:value='msg' v-on:input='msg=$event.target.value'>   
 9、样式绑定：   
-对象语法：<div v-bind:class="{active:isActive}"></div>   
-数组语法：<div v-bind:class="[activeClass,errorClass]"></div>需要在data中声明activeClass:'active'   
-
+class对象语法：<div v-bind:class="{active:isActive}"></div>   
+class数组语法：<div v-bind:class="[activeClass,errorClass]"></div>需要在data中声明activeClass:'active'   
+#### 语法细节：
+（1）对象绑定和数组绑定结合使用："[activeClass,errorClass,{active:isActive}]"   
+（2）class绑定的值简化操作：arrClasses:['active','error']；对象简化用法objClasses:{active:true,error:true}   
+（3）默认的class被保留   
+style对象语法：<div v-bind:style="{color:activeColor,fontSize:fontsize}"></div>   
+style数组语法：<div v-bind:style="[baseStyles,overridingStyles]"></div>   
+10、分支循环结构：   
+v-if是否渲染   
+v-else   
+v-else-if   
+v-show是否显示，相当于display   
+v-for遍历数组：<li v-for='item in list'>{{item}}</li>   
+<li v-for='(item,index) in list'>{{item}}+'---'+{{index}}</li>数组中的元素可以是对象   
+<div v-for='(value,key,index) in object'></div>   
+v-if和v-for结合使用<div v-if='value==12' v-for='(value,key,index) in object'></div>   
 
 
 ### 二、细节
